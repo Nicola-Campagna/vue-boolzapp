@@ -7,3 +7,11 @@ body {
             rgb(90, 184, 90)5%,
             rgb(90, 184, 90) 5%);
 }
+
+.db {
+    border: 1px solid black;
+}
+
+.vh-90 {
+    height: 90vh;
+}
