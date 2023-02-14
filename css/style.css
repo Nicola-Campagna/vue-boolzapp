@@ -1,0 +1,9 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top,
+            beige 0%,
+            beige 90%,
+            rgb(90, 184, 90)5%,
+            rgb(90, 184, 90) 5%);
+}
