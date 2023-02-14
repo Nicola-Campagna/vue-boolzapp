@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
+
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -23,72 +29,126 @@
 <body>
     <!-- Vue Js -->
     <div id="root">
-        <!-- contenitore -->
-        <div class="container vh-90 db">
-            <!-- riga di tutto il contenitore -->
-            <div class="row row-cols-2">
+        <!-- CONTENITORE -->
+        <div class="container db">
+            <!-- RIGA PRINCIPALE -->
+            <div class="row db">
 
                 <!-- parte sinistra -->
-                <div class="col-4">
+                <div class="col-5">
 
-                    <!-- IMPOSTAZIONI -->
-                    <div class="row row-cols-2">
-                        <div class="col">
-                            <!-- info -->
+                    <!-- IMPOSTAZIONI PROFILO -->
+                    <!-- riga 1 -->
+                    <div class="row">
+                        <!-- sx -->
+                        <div class="col-6 py-3 db">
+                            img
+                            Sofia
+                        </div>
+                        <!-- dx -->
+                        <div class="col-6 py-3 text-end db">
+                            <!-- icone -->
+                            <!-- load -->
+                            <i class="fa-solid fa-spinner"></i>
+                            <!-- message -->
+                            <i class="fa-solid fa-message"></i>
+                            <!-- 3punti -->
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- riga 2 -->
+                    <div class="row">
+                        <!-- sx -->
+                        <div class="col-12 py-4 db">
+                            <!-- icona campana -->
+                            <i class="fa-solid fa-bell-slash"></i>
+                            ricevi notifiche di nuovi messaggi
                         </div>
                     </div>
 
+                    <!-- riga 3 -->
+                    <div class="row">
+                        <div class="col-12 db">
+                            <!-- input search -->
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">
+                                    <!-- icona search -->
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="cerca o inizia una nuova chat"
+                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- riga4 -->
                     <!-- CONTATTI -->
-                    <div class="row row-cols-1">
-                        <div class="col">
-                            <!-- contatti -->
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- contatti in vue -->
+                            <img src="" alt="">
+                            <h2 v-for=""></h2>
                         </div>
                     </div>
-
                 </div>
-                <!-- fine parte sinistra -->
 
                 <!-- parte destra -->
-                <div class="col-8">
-
-                    <div class="row row-cols-2">
-                        <div class="col-6">
-                            <!-- info contatto -->
+                <div class="col-7">
+                    <div class="row db">
+                        <div class="col-6 py-3">
+                            img
+                            Michele
                         </div>
-                        <div class="col-6">
-                            <!-- icone di ricerca -->
-                        </div>
-                    </div>
-
-                    <div class="row row-cols-2">
-                        <!-- body text -->
-                        <div class="col-6">
-                            <!-- ricevuto -->
-                        </div>
-                        <div class="col-6">
-                            <!-- inviato -->
+                        <div class="col-6 py-3 text-end">
+                            <!-- icone -->
+                            <!-- search -->
+                            <i class=" fa-solid fa-magnifying-glass"></i>
+                            <!-- graph -->
+                            <i class="fa-solid fa-paperclip"></i>
+                            <!-- 3punti -->
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
 
-                    <div class="row row-cols-3">
-                        <!-- foot -->
-                        <div class="col-2">
-                            <!-- emoji -->
-                        </div>
-                        <div class="col-8">
-                            <!-- scrivi un mex -->
-                        </div>
-                        <div class="col-2">
-                            <!-- rec -->
-                        </div>
+                    <!-- body text -->
+                    <div class="row wallpaper vh-90 text-center">
+                        <!-- text mex ricevuto -->
+                        <div class="col-6">ricevuto</div>
+                        <!-- text mex inviato -->
+                        <div class="col-6">inviato</div>
                     </div>
 
+                    <div class="row bg-secondary">
+                        <div class="col-12">
+                            <div class="row align-items-center">
+
+                                <div class="col">
+                                    <!-- emoji -->
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </div>
+                                <div class="col-10 align-items-center">
+                                    <!-- input -->
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="scrivi un messaggio"
+                                            aria-label="scrivi un messaggio" aria-describedby="sendMex">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- icon rec -->
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <!-- fine parte destra -->
 
 
             </div>
-            <!-- fine container -->
+
+        </div>
+    </div>
+    </div>
 
 </body>
 
