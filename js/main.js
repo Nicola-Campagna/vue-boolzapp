@@ -195,16 +195,36 @@ const settVue = Vue.createApp({
                 }
             ],
             activeContact: 0,
+            newMex: {
+                date: "12:00",
+                text: "",
+                status: "sent",
+            },
 
         }
     },
 
     methods: {
-        // cambiare img nella conversazione in base al contatto cliccato
-        // switchContact() {
+        // inviare un nuovo messaggio
+        sendMex() {
+            this.contacts[this.activeContact].messages.push({
+                ...this.newMex,
+                // date: this.newMex.date,
+                // text: this.newMex.text,
+                // status: this.newMex.status,
+            })
+            // risposta 
+            setTimeout(() => {
+                this.contacts[this.activeContact].messages.push({
+                    date: "12:00",
+                    text: "okokoko",
+                    status: "received",
+                })
+            }, 1000)
+        },
 
 
-        // }
+
 
     },
 })

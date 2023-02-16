@@ -137,7 +137,8 @@
                     <i class="fa-regular fa-face-smile mx-2"></i>
                 </div>
                 <div class="flex-grow-1">
-                    <input type="text" placeholder="Scrivi un messaggio" class="send-message-input px-4 p-2" />
+                    <input @keyUp.enter="sendMex()" v-model="newMex.text" type="text" placeholder="Scrivi un messaggio"
+                        class="send-message-input px-4 p-2" />
                 </div>
                 <div class="d-flex align-items-center icons px-4 py-2">
                     <i class="fa-solid fa-microphone mx-2"></i>
