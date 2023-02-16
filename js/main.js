@@ -193,8 +193,19 @@ const settVue = Vue.createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            activeContact: 0,
+
         }
-    }
+    },
+
+    methods: {
+        // cambiare img nella conversazione in base al contatto cliccato
+        // switchContact() {
+
+
+        // }
+
+    },
 })
 settVue.mount("#app")

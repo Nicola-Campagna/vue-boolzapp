@@ -71,22 +71,28 @@
 
             <!-- LIST CONTACTS -->
             <ul class="list-contacts flex-grow-1 m-0 p-0">
-                <li class="list-contacts--contact contact--active d-flex p-2 flex-column">
-                    <!-- ciclo contatti in vue -->
-                    <div v-for="contact in contacts" class="contact--left flex-grow-1 d-flex">
-                        <!-- ciclo avatar in vue -->
-                        <img :src=" './img/avatar'+(contact.avatar)+ '.jpg' " class=" avatar" alt="" />
-                        <!-- ciclo nomi contatti in vue -->
-                        <p class="my-0 mx-0">
+
+                <!-- ciclo contatti in vue -->
+                <li v-for="contact in contacts" class="list-contacts--contact d-flex p-2">
+
+                    <div class="contact--left flex-grow-1 d-flex">
+                        <!-- avatar -->
+                        <img :src=" './img/avatar'+contact.avatar+'.jpg' " class=" avatar" alt="" />
+                        <!-- nomi avatar (contatti) -->
+                        <p class="my-0 mx-2">
                             {{contact.name}}
                             <br>
-                            <span class="latest-access">Ultimo accesso ore 12:00
+                            <!-- ultimo messaggio  -->
+                            <span v-if="contact.messages.length" class="latest-access">
+                                {{ contact.messages[contact.messages.length-1].text}}
                             </span>
                         </p>
-                        <!-- da aggiustare alla fine la posiz. -->
-                        <span class="latest-access text-rigth">12:00</span>
                     </div>
+                    <!-- ultimo accesso -->
+                    <span class="latest-access d-flex align-items-center">12:00</span>
+
                 </li>
+
             </ul>
         </section>
 
@@ -110,95 +116,14 @@
 
             <!-- MAIN CHAT -->
             <div class="main-chat flex-grow-1 d-flex flex-column align-items-start">
-                <div class="message received p-2 m-2">
+                <div class="message p-2 m-2 ">
                     <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
+
+                        <small class="message-date">15:30</small>
                     </p>
-                    <small class="message-date">15:30</small>
                 </div>
 
-                <div class="message received p-2 m-2">
-                    <p class="p-0 m-0">Hai portato a spasso il cane?</p>
-                    <small class="message-date">15:30</small>
-                </div>
 
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">Ok.</p>
-                    <small class="message-date">15:30</small>
-                </div>
-
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
-                    </p>
-                    <small class="message-date">15:30</small>
-                </div>
-
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
-                    </p>
-                    <small class="message-date">15:30</small>
-                </div>
-
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
-                    </p>
-                    <small class="message-date">15:30</small>
-                </div>
-
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
-                    </p>
-                    <small class="message-date">15:30</small>
-                </div>
-
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
-                    </p>
-                    <small class="message-date">15:30</small>
-                </div>
-
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
-                    </p>
-                    <small class="message-date">15:30</small>
-                </div>
-
-                <div class="message sent p-2 m-2">
-                    <p class="p-0 m-0">
-                        Hai portato a spasso il cane?Hai portato a spasso il cane?Hai
-                        portato a spasso il cane?Hai portato a spasso il cane? Hai portato
-                        a spasso il cane?Hai portato a spasso il cane?Hai portato a spasso
-                        il cane?
-                    </p>
-                    <small class="message-date">15:30</small>
-                </div>
             </div>
 
             <!-- SEND MESSAGE -->
@@ -214,10 +139,7 @@
                 </div>
             </footer>
         </section>
-        <p class="my-0 mx-0">
-            <!-- Michele -->
-            {{contacts.name}}
-        </p>
+
     </div>
 
 </body>
