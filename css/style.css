@@ -143,8 +143,7 @@ body {
 
 .contact--active,
 .list-contacts--contact:hover {
-    /* background-color: var(--low-contrast-bg); */
-    /* background-color: red; */
+    background-color: var(--low-contrast-bg);
 }
 
 .contacts-col--header,

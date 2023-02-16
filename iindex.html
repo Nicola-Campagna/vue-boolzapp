@@ -29,7 +29,7 @@
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <!-- APP JS -->
+    <!-- MAIN JS -->
     <script type="text/javascript" src="./js/main.js" defer></script>
 </head>
 
@@ -73,7 +73,9 @@
             <ul class="list-contacts flex-grow-1 m-0 p-0">
 
                 <!-- ciclo contatti in vue -->
-                <li v-for="contact in contacts" class="list-contacts--contact d-flex p-2">
+                <li v-for="(contact,indexContact) in contacts" @click="activeContact=indexContact"
+                    :class="indexContact==activeContact ? 'contact--active' : '' "
+                    class="list-contacts--contact d-flex p-2">
 
                     <div class="contact--left flex-grow-1 d-flex">
                         <!-- avatar -->
@@ -101,9 +103,12 @@
             <!-- HEADER CHAT COL -->
             <header class="contacts-col--header d-flex justify-content-between p-2">
                 <div class="d-flex align-items-center">
-                    <img src="./img/avatar_1.jpg" class="avatar" alt="" />
+                    <!-- avatar (attivo) -->
+                    <img :src=" './img/avatar'+contacts[activeContact].avatar+'.jpg' " class="avatar" alt="" />
+                    <!-- nome avatar(contatto) con cui stiamo parlando (attivo) -->
                     <p class="my-0 mx-2">
-                        Michele<br />
+                        {{contacts[activeContact].name}}<br />
+                        <!-- ultimo accesso -->
                         <span class="latest-access">Ultimo accesso ore 12:00</span>
                     </p>
                 </div>
@@ -115,15 +120,15 @@
             </header>
 
             <!-- MAIN CHAT -->
-            <div class="main-chat flex-grow-1 d-flex flex-column align-items-start">
-                <div class="message p-2 m-2 ">
-                    <p class="p-0 m-0">
+            <div class="main-chat flex-grow-1 d-flex flex-column align-items-start p-2">
 
-                        <small class="message-date">15:30</small>
+                <div v-for="message in contacts[activeContact].messages" :class="message.status"
+                    class="message p-2 m-2 ">
+                    <p class="p-0 m-0">
+                        {{message.text}}
+                        <small class="message-date">{{message.date}}</small>
                     </p>
                 </div>
-
-
             </div>
 
             <!-- SEND MESSAGE -->
